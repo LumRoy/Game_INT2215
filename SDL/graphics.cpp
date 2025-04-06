@@ -5,6 +5,8 @@
 //  Created by Macbook on 18/3/25.
 //
 #include "graphics.h"
+SDL_Window* gWindow=NULL;
+SDL_Renderer* gRenderer=NULL;
 void Graphics::logErrorAndExit(const char* msg, const char* error){
     SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_ERROR,
                    "%s: %s", msg, error);

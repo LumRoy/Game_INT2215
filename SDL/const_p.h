@@ -12,6 +12,6 @@ const int PADDLE_WIDTH = 20;
 const int PADDLE_HEIGHT = 100;
 const int BALL_SIZE = 20;
 
-const int PADDLE_SPEED = 10;
+const int PADDLE_SPEED = 20;
 const int BALL_SPEED = 5;
 #endif /* const_p_h */

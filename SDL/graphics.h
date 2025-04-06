@@ -11,8 +11,8 @@
 #include <SDL2_image/SDL_image.h>
 #include "defs.h"
 #include "const_p.h"
-SDL_Window* gWindow = NULL;
-SDL_Renderer* gRenderer = NULL;
+extern SDL_Window* gWindow ;
+extern SDL_Renderer* gRenderer;
 struct Graphics {
     void logErrorAndExit(const char* msg, const char* error);
     void init();

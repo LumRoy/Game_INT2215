@@ -21,6 +21,8 @@ void close() {
     SDL_Quit();
 }
 int main(int argc, char* args[]) {
+    Graphics graphics;
+    graphics.init();
     bool quit = false;
     SDL_Event e;
 
@@ -75,9 +77,9 @@ int main(int argc, char* args[]) {
         SDL_SetRenderDrawColor(gRenderer, 0, 0, 0, 255);
         SDL_RenderClear(gRenderer);
 
-        drawPaddle(0, paddle1Y);
-        drawPaddle(SCREEN_WIDTH - PADDLE_WIDTH, paddle2Y);
-        drawBall(ballX, ballY);
+        graphics.drawPaddle(0, paddle1Y);
+        graphics.drawPaddle(SCREEN_WIDTH - PADDLE_WIDTH, paddle2Y);
+        graphics.drawBall(ballX, ballY);
 
         SDL_RenderPresent(gRenderer);
     }
