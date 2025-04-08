@@ -18,7 +18,7 @@ struct Graphics {
     void init();
     void prepareScene(SDL_Texture * background);
     void presentScene();
-    SDL_Texture *loadTexture(const char *filename);
+    SDL_Texture *loadTexture(const char *filename, SDL_Renderer* renderer);
     void renderTexture(SDL_Texture *texture, int x, int y);
     void quit();
     void drawPaddle(int x, int y);

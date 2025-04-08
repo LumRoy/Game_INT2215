@@ -37,13 +37,14 @@ void Graphics::prepareScene(SDL_Texture * background){
 void Graphics::presentScene(){
     SDL_RenderPresent(gRenderer);
 }
-SDL_Texture *Graphics::loadTexture(const char *filename){
+SDL_Texture *Graphics::loadTexture(const char *filename, SDL_Renderer* renderer){
     SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO,
-                   "Loading %s", filename);
-    SDL_Texture *texture = IMG_LoadTexture(gRenderer, filename);
-    if (texture == NULL)
-        SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION,
-                       SDL_LOG_PRIORITY_ERROR, "Load texture %s", IMG_GetError());
+    "Loading %s", filename);
+    SDL_Texture *texture = IMG_LoadTexture(renderer, filename);
+    if (texture == NULL) {
+    SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_ERROR,
+    "Load texture %s", IMG_GetError());
+    }
     return texture;
 }
 void Graphics::renderTexture(SDL_Texture *texture, int x, int y){
@@ -69,4 +70,3 @@ void Graphics::drawBall(int x, int y) {
         SDL_SetRenderDrawColor(gRenderer, 255, 255, 255, 255);
         SDL_RenderFillRect(gRenderer, &fillRect);
     }
-
