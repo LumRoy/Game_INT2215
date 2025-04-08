@@ -26,6 +26,11 @@ int main(int argc, char* args[]) {
     bool quit = false;
     SDL_Event e;
     
+    SDL_Texture *background = graphics.loadTexture("background.png", gRenderer);
+    graphics.prepareScene(background);
+    graphics.presentScene();
+    graphics.renderTexture(background, SCREEN_WIDTH, SCREEN_HEIGHT);
+    
     int paddle1Y = (SCREEN_HEIGHT - PADDLE_HEIGHT) / 2;
     int paddle2Y = (SCREEN_HEIGHT - PADDLE_HEIGHT) / 2;
     int ballX = (SCREEN_WIDTH - BALL_SIZE) / 2;
@@ -81,8 +86,6 @@ int main(int argc, char* args[]) {
         graphics.drawPaddle(SCREEN_WIDTH - PADDLE_WIDTH, paddle2Y);
         graphics.drawBall(ballX, ballY);
 
-        SDL_DestroyTexture(background);
-        background = NULL;
     }
 
     close();
