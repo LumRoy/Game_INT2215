@@ -59,7 +59,20 @@ int main(int argc, char* args[]) {
                 }
             }
         }
-
+        
+        if (paddle1Y < 0) {
+            paddle1Y = 0;
+        }
+        if (paddle1Y > SCREEN_HEIGHT - PADDLE_HEIGHT) {
+            paddle1Y = SCREEN_HEIGHT - PADDLE_HEIGHT;
+        }
+        if (paddle2Y < 0) {
+            paddle2Y = 0;
+        }
+        if (paddle2Y > SCREEN_HEIGHT - PADDLE_HEIGHT) {
+            paddle2Y = SCREEN_HEIGHT - PADDLE_HEIGHT;
+        }
+        
         ballX += ballVelX;
         ballY += ballVelY;
 
